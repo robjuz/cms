@@ -30,9 +30,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->script(
         ['https://code.jquery.com/jquery-2.2.4.min.js?integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous"',
           'bootstrap.min',
-          'tinymce/tinymce.min']) ?>
-
-    <?php $this->Html->scriptBlock('tinymce.init({ selector:"textarea" });', ['block' => true]); ?>
+          'tinymce/tinymce.min',
+          'global']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>

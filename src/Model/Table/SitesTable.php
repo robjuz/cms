@@ -30,6 +30,7 @@ class SitesTable extends Table
 
         $this->addBehavior('Timestamp');
         $this->addBehavior('Ceeram/Blame.Blame');
+        $this->addBehavior('Muffin/Slug.Slug');
     }
 
     /**
@@ -45,9 +46,9 @@ class SitesTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('slug', 'create')
-            ->notEmpty('slug')
-            ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            // ->requirePresence('slug', 'create')
+            ->allowEmpty('slug');
+            // ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->allowEmpty('title');
@@ -82,7 +83,7 @@ class SitesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['slug']));
+        // $rules->add($rules->isUnique(['slug']));
         return $rules;
     }
 }

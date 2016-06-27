@@ -43,7 +43,7 @@ class UsersController extends AppController
         if ($id !== null) {
             $user = $this->Users->get($id, [
                 'contain' => []
-            ]); 
+            ]);
         } else {
             $user = $this->Users->newEntity();
         }

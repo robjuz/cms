@@ -2,7 +2,6 @@
 <fieldset>
     <legend><?= __('Add/Edit Site') ?></legend>
     <?php
-        echo $this->Form->input('slug');
         echo $this->Form->input('title');
         echo $this->Form->input('content',['required' => false]);
         echo $this->Form->input('status');

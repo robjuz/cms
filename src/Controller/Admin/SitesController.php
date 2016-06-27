@@ -37,12 +37,12 @@ class SitesController extends AppController
         if ($id !== null) {
             $site = $this->Sites->get($id, [
                 'contain' => []
-            ]); 
+            ]);
         } else {
             $site = $this->Sites->newEntity();
-            $site->status = 0;
-            $this->Sites->save($site);
-            return $this->redirect(['action'=>'edit', $site->id]);
+            // $site->status = 0;
+            // $this->Sites->save($site);
+            // return $this->redirect(['action'=>'edit', $site->id]);
         }
 
         if ($this->request->is(['patch', 'post', 'put'])) {
